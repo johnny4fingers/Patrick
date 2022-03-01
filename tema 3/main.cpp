@@ -19,6 +19,9 @@ int main()
         }
     }
 
+    par = 0;
+    impar = 0;
+
     for(int i = 1; i <= p; i++) {
         for(int j = 1; j <= q; j++){
             if(a[i][j] % 2 == 0) {
