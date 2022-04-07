@@ -8,52 +8,25 @@ Se citesc 4 caractere. Afisati in ordine lexicografica cate 1 pe o linie ecran.
 
 int main()
 {
-    char a, b, c, d, e;
+    char x, a[4], aux;
 
-    cin >> a >> b >> c >> d;
-
-    if(a > b){
-        e = a;
-        a = b;
-        b = e;
+    for(int i = 0; i < 4; i++){
+        cin >> a[i];
     }
 
-    if(a > c){
-        e = a;
-        a = c;
-        c = e;
+    for(int i = 0; i < 3; i++){
+        for(int j = i + 1; j < 4; j++){
+            if(a[i] > a[j]){
+                aux = a[i];
+                a[i] = a[j];
+                a[j] = aux;
+            }
+        }
     }
 
-    if(a > d){
-        e = a;
-        a = d;
-        d = e;
+    for(int i = 0; i < 4; i++){
+        cout << a[i] << endl;
     }
-
-    if(b > c){
-        e = b;
-        b = c;
-        c = e;
-    }
-
-    if(b > d){
-        e = b;
-        b = d;
-        d = e;
-    }
-
-    if(c > d){
-        e = c;
-        c = d;
-        d = e;
-    }
-
-    cout << a << endl;
-    cout << b << endl;
-    cout << c << endl;
-    cout << d << endl;
-
-    // am vrut sa fac cu tablou dar nu am reusit si am rezolvat-o asa chiar daca ii mai brute force.
 
     return 0;
 }
