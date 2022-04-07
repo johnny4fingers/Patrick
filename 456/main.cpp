@@ -24,6 +24,35 @@ _____
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    int n = 5, m = 3, a[10][10] = {{1, 0, 1}, {1, 1, 1}, {0, 1, 0}, {0, 0, 0}, {1, 1, 0}};
+
+    /*
+    cin >> n >> m;
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < m; j++){
+            cin >> a[i][j];
+        }
+    }
+    */
+
+
+
+    for(int i = 0; i < n - 1; i++){
+        for(int j = i + 1; j < n; j++){
+
+            bool flag = true;
+            for(int k = 0; k < m; k++){
+                if(a[i][k] + a[j][k] != 1){
+                    flag = false;
+                }
+            }
+
+            if(flag){
+                cout << "(" << i + 1 << "," << j + 1 << ")" << endl;
+             }
+        }
+    }
+
     return 0;
 }
